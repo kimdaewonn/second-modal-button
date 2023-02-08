@@ -23,7 +23,7 @@ const Buttonn = () => {
   const [size, setSize] = useState(false);
   const [round, setRound] = useState(false);
   const [color, setColor] = useState(false);
-  console.log(color);
+  // console.log(color);
 
   return (
     <>
@@ -68,6 +68,8 @@ const Buttonn = () => {
         modalprops4={color}
       ></Modal>
     </>
+    //1. 모달 사용할거니깐 선언해주고 다른곳에서는 내려받는다
+    //2. 모달프롭스를 이용해서 bttn,size 등 값(false)들을 모달로 던져준다.
   );
 };
 
