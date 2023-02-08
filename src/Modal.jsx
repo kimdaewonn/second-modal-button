@@ -3,8 +3,9 @@ import styled from "styled-components";
 
 const Box = styled.div`
   width: ${(props) => (props.modal3 ? "800px" : "600px")};
+  display: ${(props) => (props.modal3 ? "none" : "flex")};
   height: 300px;
-  background: #f6f6f6;
+  background: ${(props) => (props.modal5 ? "skyblue" : "#f6f6f6")};
   border-radius: ${(props) => (props.modal4 ? "50%" : "5px")};
   position: fixed;
   top: 50%;
@@ -25,6 +26,7 @@ const Modal = (props) => {
         modal2={props.modalprops1}
         modal3={props.modalprops2}
         modal4={props.modalprops3}
+        modal5={props.modalprops4}
       >
         모달
       </Box>

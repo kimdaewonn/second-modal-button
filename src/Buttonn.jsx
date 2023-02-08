@@ -22,7 +22,8 @@ const Buttonn = () => {
   const [bttn, setBttn] = useState(false);
   const [size, setSize] = useState(false);
   const [round, setRound] = useState(false);
-  console.log(round);
+  const [color, setColor] = useState(false);
+  console.log(color);
 
   return (
     <>
@@ -31,7 +32,7 @@ const Buttonn = () => {
           setSize(!size);
         }}
       >
-        width
+        Width
       </Btn>
       <ButtonGroup
         className="buttongroup1"
@@ -52,9 +53,20 @@ const Buttonn = () => {
         >
           Round
         </Button>
-        {/* <Button>Three</Button> */}
+        <Button
+          onClick={() => {
+            setColor(!color);
+          }}
+        >
+          Color
+        </Button>
       </ButtonGroup>
-      <Modal modalprops1={bttn} modalprops2={size} modalprops3={round}></Modal>
+      <Modal
+        modalprops1={bttn}
+        modalprops2={size}
+        modalprops3={round}
+        modalprops4={color}
+      ></Modal>
     </>
   );
 };
