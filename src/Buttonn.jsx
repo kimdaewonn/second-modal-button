@@ -27,7 +27,7 @@ const Buttonn = () => {
 
   return (
     <>
-      <Btn
+      <Btn className="Btn"
         onClick={() => {
           setSize(!size);
         }}
