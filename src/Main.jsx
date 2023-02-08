@@ -1,7 +1,5 @@
 import React from "react";
 import Buttonn from "./Buttonn";
-import Button from "@mui/material/Button";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Main = () => {
