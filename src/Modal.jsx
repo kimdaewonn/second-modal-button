@@ -1,10 +1,15 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 const Box = styled.div`
   width: ${(props) => (props.modal2 ? "800px" : "600px")};
-  display: ${(props) => (props.modal2 ? "none" : "flex")};
   height: 300px;
-  background: ${(props) => (props.modal4 ? "skyblue" : "#f6f6f6")};
+  background: ${(props) =>
+    props.modal4 === "sky"
+      ? "skyblue"
+      : props.modal4 === "orange"
+      ? "orange"
+      : "#f6f6f6"};
   border-radius: ${(props) => (props.modal3 ? "50%" : "5px")};
   position: fixed;
   top: 50%;
@@ -15,14 +20,23 @@ const Box = styled.div`
   align-items: center;
   font-size: 20px;
 `;
-// display: ${(props) => (props.modal2 ? "none" : "flex")}; 두개 가능?
-
 
 const Modal = (props) => {
-    console.log(props);
+  // console.log(props.modal1);
+  const { setBttn } = props;
+  // console.log(bttn);
+  // console.log(props.modalprops1);
+
+  // console.log(props);
   // modalprops1(전송매개체) = props(false)가 된다.
-  // bttn,size 등 값들 아닌듯 저서끝남? 맞는듯?아닌듯?
   // console.log(props.modalprops1) false
+
+  const [closed, setClosed] = useState(false);
+  const CloseGo = () => {
+    // console.log("??");
+    setBttn(true);
+    setClosed(closed);
+  };
 
   return (
     <>
@@ -31,11 +45,12 @@ const Modal = (props) => {
         modal2={props.modalprops2}
         modal3={props.modalprops3}
         modal4={props.modalprops4}
-  // props.modalprops1 = props(false)가 된다.
-  // (전송매개체)modal1가 false가 된다.
-
+        // props.modalprops1 = props(false)가 된다.
+        // (전송매개체)modal1가 false가 된다.
       >
-        모달
+        <div className="close" onClick={CloseGo}>
+          x
+        </div>
       </Box>
     </>
   );

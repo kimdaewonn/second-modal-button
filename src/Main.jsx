@@ -13,6 +13,9 @@ const Main = () => {
       <Link className="modal" to="/modal">
         모달구경
       </Link>
+      <Link className="selector" to="/selector">
+        셀렉터 구경
+      </Link>
       <Buttonn></Buttonn>
     </>
   );

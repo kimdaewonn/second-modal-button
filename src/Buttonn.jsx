@@ -22,12 +22,14 @@ const Buttonn = () => {
   const [bttn, setBttn] = useState(false);
   const [size, setSize] = useState(false);
   const [round, setRound] = useState(false);
-  const [color, setColor] = useState(false);
+  const [color, setColor] = useState("");
+  // 문자열 지정
   // console.log(color);
-
+  // console.log(bttn);
   return (
     <>
-      <Btn className="Btn"
+      <Btn
+        className="Btn"
         onClick={() => {
           setSize(!size);
         }}
@@ -55,17 +57,28 @@ const Buttonn = () => {
         </Button>
         <Button
           onClick={() => {
-            setColor(!color);
+            setColor("sky");
+            // sky지정
           }}
         >
-          Color
+          Sky
+        </Button>
+        <Button
+          onClick={() => {
+            setColor("orange");
+            // orange지정
+          }}
+        >
+          Orange
         </Button>
       </ButtonGroup>
       <Modal
+        setBttn={setBttn}
         modalprops1={bttn}
         modalprops2={size}
         modalprops3={round}
         modalprops4={color}
+        // color(modalprops4)안에 'sky','orange'
       ></Modal>
     </>
     //1. 모달 사용할거니깐 선언해주고 다른곳에서는 내려받는다
