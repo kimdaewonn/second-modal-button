@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styled from "styled-components";
 
 const Box = styled.div`
@@ -15,7 +14,7 @@ const Box = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: ${(props) => (props.modal1 ? "none" : "flex")};
+  display: ${(props) => (props.modal1 ? "flex" : "none")};
   justify-content: center;
   align-items: center;
   font-size: 20px;
@@ -24,18 +23,16 @@ const Box = styled.div`
 const Modal = (props) => {
   // console.log(props.modal1);
   const { setBttn } = props;
-  // console.log(bttn);
+  console.log(setBttn);
   // console.log(props.modalprops1);
 
   // console.log(props);
   // modalprops1(전송매개체) = props(false)가 된다.
   // console.log(props.modalprops1) false
 
-  const [closed, setClosed] = useState(false);
+  // const [closed, setClosed] = useState(false);
   const CloseGo = () => {
-    // console.log("??");
-    setBttn(true);
-    setClosed(closed);
+    setBttn(false);
   };
 
   return (
